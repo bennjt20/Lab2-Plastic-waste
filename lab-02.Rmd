@@ -21,6 +21,7 @@ Warm up:
 
 1) R Studio panes: On right side, Source is on top of Console. On left side, 
 Environment is on top of Files/Plots
+<<<<<<< HEAD
 
 2) There are 240 observations
 
@@ -28,6 +29,15 @@ Environment is on top of Files/Plots
 
 ## Exercises
 
+=======
+
+2) There are 240 observations
+
+3) NA - missing data?
+
+## Exercises
+
+>>>>>>> b91bab94b7f32f99c1ebd850360d0643013552db
 Trinidad and Tobago stands out, which makes sense based on their lax waste 
 management practices. 
 
@@ -54,6 +64,21 @@ ggplot(data = plastic_waste, aes(x = plastic_waste_per_cap, fill = continent)) +
 ```{r plastic-waste-density}
 ggplot(data = plastic_waste, aes(x = plastic_waste_per_cap)) +
   geom_density()
+<<<<<<< HEAD
+```
+
+1.1.b. Comparing distributions across continents by coloring density curves by continent. 
+```{r plastic-waste-colorcont}
+ggplot(data = plastic_waste, 
+       mapping = aes(x = plastic_waste_per_cap, 
+                     color = continent)) +
+  geom_density()
+```
+
+1.1.c. Filling curves with colors
+
+```{r plastic-waste-curvecolor}
+=======
 ```
 
 1.1.b. Comparing distributions across continents by coloring density curves by continent. 
@@ -77,6 +102,20 @@ ggplot(data = plastic_waste,
 ### Exercise 2.1. Recreating density plots using lower alpha level
 
 ```{r plastic-waste-loweralpha}
+>>>>>>> b91bab94b7f32f99c1ebd850360d0643013552db
+ggplot(data = plastic_waste, 
+       mapping = aes(x = plastic_waste_per_cap, 
+                     color = continent, 
+                     fill = continent)) +
+<<<<<<< HEAD
+  geom_density()
+```
+
+### Exercise 2.1. Recreating density plots using lower alpha level
+
+Jabber jabber
+
+```{r plastic-waste-loweralpha}
 ggplot(data = plastic_waste, 
        mapping = aes(x = plastic_waste_per_cap, 
                      color = continent, 
@@ -90,6 +129,17 @@ I think we defined the alpha level as a characteristic of the plotting geom beca
 
 ### Exercise 3.1. Convert side-by-side box plots to violin plots. 
 
+=======
+  geom_density(alpha = 0.1)
+```
+
+### Exercise 2.2
+
+I think we defined the alpha level as a characteristic of the plotting geom because this definition refers specifically to the density or transparency of what we mapped- meaning the curves.  
+
+### Exercise 3.1. Convert side-by-side box plots to violin plots. 
+
+>>>>>>> b91bab94b7f32f99c1ebd850360d0643013552db
 Box plots:
 
 ```{r plastic-waste-box}

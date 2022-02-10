@@ -112,12 +112,28 @@ ggplot(data = plastic_waste,
        mapping = aes(x = plastic_waste_per_cap, 
                      color = continent, 
                      fill = continent)) +
-  geom_density(alpha = 0.1)
+  geom_density()
 ```
 
     ## Warning: Removed 51 rows containing non-finite values (stat_density).
 
 ![](lab-02_files/figure-gfm/plastic-waste-loweralpha-1.png)<!-- -->
+
+### Exercise 2.1. Recreating density plots using lower alpha level
+
+Jabber jabber
+
+``` r
+ggplot(data = plastic_waste, 
+       mapping = aes(x = plastic_waste_per_cap, 
+                     color = continent, 
+                     fill = continent)) +
+  geom_density(alpha = 0.1)
+```
+
+    ## Warning: Removed 51 rows containing non-finite values (stat_density).
+
+![](lab-02_files/figure-gfm/plastic-waste-loweralpha2-1.png)<!-- -->
 
 ### Exercise 2.2
 
@@ -138,8 +154,9 @@ ggplot(data = plastic_waste,
 
     ## Warning: Removed 51 rows containing non-finite values (stat_boxplot).
 
-![](lab-02_files/figure-gfm/plastic-waste-box-1.png)<!-- --> Violin
-plots:
+![](lab-02_files/figure-gfm/plastic-waste-box-1.png)<!-- -->
+
+Violin plots:
 
 ``` r
 ggplot(plastic_waste, aes(x = continent, y = plastic_waste_per_cap)) +
@@ -150,12 +167,16 @@ ggplot(plastic_waste, aes(x = continent, y = plastic_waste_per_cap)) +
 
 ![](lab-02_files/figure-gfm/plastic-waste-violin-1.png)<!-- -->
 
-3.1.a. What do the violin plots reveal that box plots do not? Instead of
-using bars, the violin plots show us the shape of the data distribution.
+3.1.a. What do the violin plots reveal that box plots do not?
+
+Instead of using bars, the violin plots show us the shape of the data
+distribution.
 
 3.1.b. What features are apparent in the box plots but not in the violin
-plots? The boxes show us a tidy visualization of where 50% of the data
-lay in the distribution.
+plots?
+
+The boxes show us a tidy visualization of where 50% of the data lay in
+the distribution.
 
 ### Exercise 4.1. Scatterplot- relationship between plastic waste per capita and mismanaged plastic waste per capita
 
@@ -236,11 +257,24 @@ together at the same time)
 
 I gave this one a shot, but nothing doing this time…
 
-{r smooth} ggplot(plastic_waste, aes(x = coastal_pop, y =
-plastic_waste_per_cap, color = continent)) + geom_point(aes(color =
-continent)) + geom_point(alpha = (1/3), size = 3) + geom_smooth(lwd = 3,
-se = FALSE) + geom_point(alpha = (1/3), size = 3) + facet_wrap(\~
-continent) + geom_smooth(lwd = 1.5, se = FALSE)
+``` r
+ggplot(plastic_waste, aes(x = coastal_pop, y = plastic_waste_per_cap, color = continent)) + geom_point(aes(color = continent))  + geom_point(alpha = (1/3), size = 3) + geom_smooth(lwd = 3, se = FALSE)  + geom_point(alpha = (1/3), size = 3) + facet_wrap(~ continent) +
+  geom_smooth(lwd = 1.5, se = FALSE)
+```
+
+    ## `geom_smooth()` using method = 'loess' and formula 'y ~ x'
+
+    ## Warning: Removed 51 rows containing non-finite values (stat_smooth).
+
+    ## `geom_smooth()` using method = 'loess' and formula 'y ~ x'
+
+    ## Warning: Removed 51 rows containing non-finite values (stat_smooth).
+
+    ## Warning: Removed 51 rows containing missing values (geom_point).
+    ## Removed 51 rows containing missing values (geom_point).
+    ## Removed 51 rows containing missing values (geom_point).
+
+![](lab-02_files/figure-gfm/smooth-1.png)<!-- -->
 
 ### Pro-Tips
 
